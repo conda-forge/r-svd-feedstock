@@ -16,7 +16,8 @@ source:
   sha256: 6f585cb622cc52e2b7f3efddb7a363e91771bff80b8facb554755c2b33b7f402
 
 build:
-  number: 0
+  merge_build_host: True  # [win]
+  number: 1
   skip: true  # [win32]
 
   rpaths:
@@ -25,14 +26,16 @@ build:
 
 requirements:
   build:
-    - r-base
     - posix                # [win]
-    - {{native}}toolchain  # [win]
-    - gcc                  # [not win]
+    - {{ compiler('fortran') }}        # [unix]
+    - {{ compiler('m2w64_fortran') }}  # [win]
+    - {{ compiler('c') }}        # [unix]
+    - {{ compiler('m2w64_c') }}  # [win]
+  host:
+    - r-base
 
   run:
     - r-base
-    - libgcc  # [not win]
 
 test:
   commands:
