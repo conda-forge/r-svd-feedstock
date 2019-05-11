@@ -1,7 +1,7 @@
 About r-svd
 ===========
 
-Home: https://cran.r-project.org/web/packages/svd/index.html
+Home: http://github.com/asl/svd
 
 Package license: BSD_3_clause
 
@@ -36,24 +36,24 @@ Current build status
         <table>
           <thead><tr><th>Variant</th><th>Status</th></tr></thead>
           <tbody><tr>
-              <td>linux</td>
+              <td>linux_target_platformlinux-64</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=1699&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/r-svd-feedstock?branchName=master&jobName=linux&configuration=linux_" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/r-svd-feedstock?branchName=master&jobName=linux&configuration=linux_target_platformlinux-64" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>osx</td>
+              <td>osx_target_platformosx-64</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=1699&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/r-svd-feedstock?branchName=master&jobName=osx&configuration=osx_" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/r-svd-feedstock?branchName=master&jobName=osx&configuration=osx_target_platformosx-64" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>win</td>
+              <td>win_target_platformwin-64</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=1699&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/r-svd-feedstock?branchName=master&jobName=win&configuration=win_" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/r-svd-feedstock?branchName=master&jobName=win&configuration=win_target_platformwin-64" alt="variant">
                 </a>
               </td>
             </tr>
@@ -62,6 +62,7 @@ Current build status
       </details>
     </td>
   </tr>
+![ppc64le disabled](https://img.shields.io/badge/ppc64le-disabled-lightgrey.svg)
 </table>
 
 Current release info
@@ -157,10 +158,7 @@ Feedstock Maintainers
 =====================
 
 * [@ArneKr](https://github.com/ArneKr/)
-* [@Bgruening](https://github.com/Bgruening/)
-* [@Daler](https://github.com/Daler/)
 * [@FrodePedersen](https://github.com/FrodePedersen/)
-* [@Jdblischak](https://github.com/Jdblischak/)
-* [@Johanneskoester](https://github.com/Johanneskoester/)
 * [@MathiasHaudgaard](https://github.com/MathiasHaudgaard/)
+* [@conda-forge/r](https://github.com/conda-forge/r/)
 
