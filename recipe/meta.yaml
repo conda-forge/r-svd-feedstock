@@ -1,4 +1,4 @@
-{% set version = '0.4.3' %}
+{% set version = '0.5' %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,21 +10,21 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/svd_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/svd/svd_{{ version }}.tar.gz
-  sha256: c467f6ad914efc75de7e6eb8c2af12cce5ee32bc1e8e43ca36cf3a3315fe9b72
+  sha256: d042d448671355d0664d37fd64dc90932eb780e6494c479d4431d1faae2071a1
 
 build:
   merge_build_host: True  # [win]
-  number: 2
+  number: 0
   rpaths:
     - lib/R/lib/
     - lib/
 
 requirements:
   build:
-    - {{ compiler('fortran') }}        # [unix]
+    - {{ compiler('c') }}              # [not win]
+    - {{ compiler('m2w64_c') }}        # [win]
+    - {{ compiler('fortran') }}        # [not win]
     - {{ compiler('m2w64_fortran') }}  # [win]
-    - {{ compiler('c') }}        # [unix]
-    - {{ compiler('m2w64_c') }}  # [win]
     - {{posix}}filesystem        # [win]
     - {{posix}}make
     - {{posix}}sed               # [win]
@@ -46,6 +46,9 @@ about:
   license: BSD_3_clause
   summary: R bindings to SVD and eigensolvers (PROPACK, nuTRLan).
   license_family: BSD
+  license_file:
+    - '{{ environ["PREFIX"] }}/lib/R/share/licenses/BSD_3_clause'
+    - LICENSE
 
 extra:
   recipe-maintainers:
@@ -59,7 +62,7 @@ extra:
 # Imports: methods
 # Suggests: testthat (>= 0.7)
 # Title: Interfaces to Various State-of-Art SVD and Eigensolvers
-# Version: 0.4.3
+# Version: 0.5
 # Author: Anton Korobeynikov [aut, cre], Rasmus Munk Larsen [ctb, cph], Lawrence Berkeley National Laboratory [ctb, cph]
 # Maintainer: Anton Korobeynikov <anton@korobeynikov.info>
 # Description: R bindings to SVD and eigensolvers (PROPACK, nuTRLan).
@@ -67,6 +70,6 @@ extra:
 # Copyright: see file COPYRIGHTS
 # URL: http://github.com/asl/svd
 # NeedsCompilation: yes
-# Packaged: 2019-04-04 20:18:20 UTC; asl
+# Packaged: 2019-08-19 09:13:26 UTC; asl
 # Repository: CRAN
-# Date/Publication: 2019-04-05 10:20:03 UTC
+# Date/Publication: 2019-08-19 11:20:05 UTC
