@@ -14,7 +14,7 @@ source:
 
 build:
   merge_build_host: True  # [win]
-  number: 1
+  number: 2
   rpaths:
     - lib/R/lib/
     - lib/
@@ -43,7 +43,7 @@ test:
 
 about:
   home: http://github.com/asl/svd
-  license: BSD_3_clause
+  license: BSD-3-Clause
   summary: R bindings to SVD and eigensolvers (PROPACK, nuTRLan).
   license_family: BSD
   license_file:
