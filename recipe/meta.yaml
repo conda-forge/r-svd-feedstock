@@ -1,4 +1,4 @@
-{% set version = "0.5.1" %}
+{% set version = "0.5.2" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,7 +10,7 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/svd_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/svd/svd_{{ version }}.tar.gz
-  sha256: d4dcb650757bfbf8ae388622686be20e8d55cca68096146a30aee8ced96aa113
+  sha256: 0f586e7fd00487ef4a8408e4dc907f6fcb3a8b4624b1cd6c3beaab203755e067
 
 build:
   merge_build_host: true  # [win]
