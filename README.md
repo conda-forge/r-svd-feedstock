@@ -1,11 +1,22 @@
+About r-svd-feedstock
+=====================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/r-svd-feedstock/blob/main/LICENSE.txt)
+
 About r-svd
-===========
+-----------
 
 Home: http://github.com/asl/svd
 
 Package license: BSD-3-Clause
 
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/r-svd-feedstock/blob/main/LICENSE.txt)
+Summary: R bindings to SVD and eigensolvers (PROPACK, nuTRLan).
+About r-svd
+-----------
+
+Home: http://github.com/asl/svd
+
+Package license: BSD-3-Clause
 
 Summary: R bindings to SVD and eigensolvers (PROPACK, nuTRLan).
 
