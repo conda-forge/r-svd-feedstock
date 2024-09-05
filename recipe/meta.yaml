@@ -1,4 +1,4 @@
-{% set version = "0.5.5" %}
+{% set version = "0.5.6" %}
 {% set posix = 'm2-' if win else '' %}
 
 package:
@@ -9,29 +9,36 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/svd_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/svd/svd_{{ version }}.tar.gz
-  sha256: e20139794ad1a8c7d7fdffb8dac068c6fbdc8f0b65929341cb5c4d2ff1f98cc6
+  sha256: 77e2af07f5bd155c0ea9e17ede46c04bed36021aeb5b39f89ec08ad8b642fc09
 
 build:
-  number: 1
+  number: 0
   rpaths:
     - lib/R/lib/
     - lib/
+  missing_dso_whitelist:
+    - '*/R.dll'        # [win]
+    - '*/Rblas.dll'    # [win]
+    - '*/Rlapack.dll'  # [win]
 
 requirements:
   build:
+    - cross-r-base {{ r_base }}        # [build_platform != target_platform]
     - {{ compiler('c') }}              # [not win]
     - {{ stdlib("c") }}                # [not win]
     - {{ compiler('m2w64_c') }}        # [win]
     - {{ stdlib("m2w64_c") }}          # [win]
     - {{ compiler('fortran') }}        # [not win]
     - {{ compiler('m2w64_fortran') }}  # [win]
-    - {{ posix }}filesystem        # [win]
+    - {{ posix }}filesystem            # [win]
     - {{ posix }}make
-    - {{ posix }}sed               # [win]
-    - {{ posix }}coreutils         # [win]
-    - {{ posix }}zip               # [win]
+    - {{ posix }}sed                   # [win]
+    - {{ posix }}coreutils             # [win]
+    - {{ posix }}zip                   # [win]
   host:
     - r-base
+    - libblas
+    - liblapack
   run:
     - r-base
 
@@ -55,20 +62,3 @@ extra:
     - MathiasHaudgaard
     - FrodePedersen
     - ArneKr
-
-# Package: svd
-# Type: Package
-# Imports: methods
-# Suggests: testthat (>= 0.7)
-# Title: Interfaces to Various State-of-Art SVD and Eigensolvers
-# Version: 0.5
-# Author: Anton Korobeynikov [aut, cre], Rasmus Munk Larsen [ctb, cph], Lawrence Berkeley National Laboratory [ctb, cph]
-# Maintainer: Anton Korobeynikov <anton@korobeynikov.info>
-# Description: R bindings to SVD and eigensolvers (PROPACK, nuTRLan).
-# License: BSD_3_clause + file LICENSE
-# Copyright: see file COPYRIGHTS
-# URL: http://github.com/asl/svd
-# NeedsCompilation: yes
-# Packaged: 2019-08-19 09:13:26 UTC; asl
-# Repository: CRAN
-# Date/Publication: 2019-08-19 11:20:05 UTC
