@@ -1,4 +1,4 @@
-{% set version = "0.5.7" %}
+{% set version = "0.5.8" %}
 {% set posix = 'm2-' if win else '' %}
 
 package:
@@ -9,7 +9,7 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/svd_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/svd/svd_{{ version }}.tar.gz
-  sha256: 50994e78708ddbebf7ba937846e2cadde48437a6e26f1af0a9cfbfd624441514
+  sha256: c8f99c62ada68fbb1b40ca5d20775d5177478598416a200f421003e6b21f6543
 
 build:
   number: 0
